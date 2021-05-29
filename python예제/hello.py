@@ -1,0 +1,1 @@
+ print ("Hello Python!!")  # 프로그램실행하면 터미널창에서 print 출력

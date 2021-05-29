@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="utf-8">
+      <title>HOME IOT NETWORK</title>
+   <script language="JavaScript">
+      var distance = 300;
+   </script>
+   </head>
+   <body>
+      <h1>LED ON OFF</h1>
+         <form action='/data/led' method='post'>
+            <button type="submit" name="led" value="on">ON</button>
+            <button type="submit" name="led" value="off">OFF</button>
+         </form>
+
+      <h1>PWM LED</h1>
+         <form action='/data/ledmood' method='post'>
+            <button type="submit" name="pwm" value="+">brighter</button>
+            <button type="submit" name="pwm" value="-">darker</button>
+         </form>
+
+      <h1>Buzzer</h1>
+         <form action='/data/buzz' method='post'>
+            <button type="submit" name="buzz" value="on">buzzer</button>
+         </form>
+      <h1>UltraSonic Sensor</h1>
+         <form action='/data/ultra' method='post'>
+            <h4>{{distance}} cm</h4>
+            <button type="submit" name="ultra" value="on">Measure</button>
+         </form>
+
+      <h1>Clean GPIO Setup</h1>
+         <form action='/data/clean' method='post'>
+            <button type="submit" name="led" value="clean">Clean</button>
+            <button type="submit" name="led" value="set">Set</button>
+         </form>
+   </body>
+</html>
