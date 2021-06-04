@@ -1,9 +1,9 @@
 # 파일명 : alltest.py
 # 지금까지했던 센서들을 웹으로 제어 => 웹의 각 버튼을 클릭하면 센서를 제어할 수 있는 프로그램 구현
-# 1. LED on/off
-# 2. LED 무드등(밝기 조절)
-# 3. 부저센서출력
-# 4. 초음파센서
+# 1. LED on/off : 버튼 클릭할때마다 on, off 제어
+# 2. LED 무드등(밝기 조절) : 버튼 클릭할때마다 점점 밝아지고, 점점 어두워지도록 구현
+# 3. 부저센서출력 : 버튼 클릭하면 도레미파솔라시 부저센서 출력
+# 4. 초음파센서   : 버튼 클릭하면 10번 측정후에 최소거리값을 웹에 출력
 
 from flask import Flask, request, render_template
 import RPi.GPIO as GPIO
@@ -126,8 +126,7 @@ def clean():
       if data == "clean":
          print()
          GPIO.cleaup()
-      elif data == "set":
-         print("세팅")
+
    except:
       pass
 
