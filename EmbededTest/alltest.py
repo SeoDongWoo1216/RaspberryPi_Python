@@ -4,6 +4,7 @@
 # 2. LED 무드등(밝기 조절) : 버튼 클릭할때마다 점점 밝아지고, 점점 어두워지도록 구현
 # 3. 부저센서출력 : 버튼 클릭하면 도레미파솔라시 부저센서 출력
 # 4. 초음파센서   : 버튼 클릭하면 10번 측정후에 최소거리값을 웹에 출력
+# 5. 클린 : GPIO.cleanup() 으로 모든 핀들을 
 
 from flask import Flask, request, render_template
 import RPi.GPIO as GPIO
@@ -31,11 +32,13 @@ global i
 i = 0
 
 
+# 처음 웹 페이지 화면
 @app.route('/')
 def home():
    return render_template("index.html")
 
 
+# LED on, off 버튼으로 LED 제어
 @app.route('/data/led', methods= ['POST'])
 def led():
    data = request.form['led']
@@ -43,9 +46,10 @@ def led():
       GPIO.output(ledonoff, 1)
    elif data == "off":
       GPIO.output(ledonoff, 0)
-   return home()
+   return home()                           # return home()으로 처리해주면 계속 메인페이지에를 호출하기때문에 메인페이지에 계속 머물러있는것처럼 보임.
 
 
+# 무드등의 on 클릭하면 LED가 점점 밝아지고, off를 클릭하면 LED가 점점 어두워진다.
 @app.route('/data/ledmood', methods = ['POST'])
 def ledmood():
    global i
@@ -67,6 +71,7 @@ def ledmood():
    return home()
 
 
+# 부저 버튼을 클릭했을시 도레미파솔라시 출력
 @app.route('/data/buzz', methods = ['POST'])
 def Buzzsong():
    data = request.form['buzz']
