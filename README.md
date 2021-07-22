@@ -8,3 +8,16 @@
 - [PWM, 초음파센서를 활용한 후방감지센서 구현](https://andjjip.tistory.com/242?category=876593)
 - [Flask를 활용한 gpio 제어](https://andjjip.tistory.com/243?category=876593)
 - [Cron식과 Sqlite](https://andjjip.tistory.com/244?category=876593)
+
+--------
+
+## 실습 : IoT 프로젝트
+라즈베리파이와 센서들을 Flask를 이용해 제어 <br>
+![iot프로젝트실행움짤](https://github.com/SeoDongWoo1216/RaspberryPi_Python/blob/main/IoT%20%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8%20%EC%8B%A4%ED%96%89%ED%99%94%EB%A9%B4.gif) <br>
+
+[제어소스](https://github.com/SeoDongWoo1216/RaspberryPi_Python/blob/main/EmbededTest/alltest.py) <br>
+[html소스](https://github.com/SeoDongWoo1216/RaspberryPi_Python/blob/main/EmbededTest/templates/index.html) <br>
+
+--------
+
+
